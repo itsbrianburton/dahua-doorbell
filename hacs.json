@@ -1,0 +1,6 @@
+{
+	"name": "Dahua Doorbell",
+	"render_readme": true,
+	"filename": "dahua-doorbell.js",
+	"content_in_root": false
+}
