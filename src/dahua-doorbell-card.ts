@@ -10,12 +10,14 @@ interface Config extends LovelaceCardConfig {
 }
 
 export class DahuaDoorbellCard extends LitElement {
+    @state() private _config: Config;
     @state() private _header: string | typeof nothing;
     @state() private _state: HassEntity;
 
     private _hass;
 
     setConfig(config: Config) {
+        this._config = config;
         this._header = config.header === "" ? nothing : config.header;
 
         if (this._hass) {
@@ -41,7 +43,7 @@ export class DahuaDoorbellCard extends LitElement {
 
     render() {
         let webRTCConfig = {
-            entity: "camera.cancello_strada_sub_4"
+            entity: this._config?.camera_entity
         };
 
         let content: TemplateResult = html`

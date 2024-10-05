@@ -1189,6 +1189,7 @@ function $9cd908ed2625c047$export$d541bacb2bda4494(n) {
 
 class $a31478a830f9f2a1$export$d0a8272d8a203a78 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
     setConfig(config) {
+        this._config = config;
         this._header = config.header === "" ? (0, $f58f44579a4747ac$export$45b790e32b2810ee) : config.header;
         if (this._hass) this.hass = this._hass;
     }
@@ -1203,7 +1204,7 @@ class $a31478a830f9f2a1$export$d0a8272d8a203a78 extends (0, $ab210b2da7b39b9d$ex
     }
     render() {
         let webRTCConfig = {
-            entity: "camera.cancello_strada_sub_4"
+            entity: this._config?.camera_entity
         };
         let content = (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
             <webrtc-camera @call-action=${this._callAction} config="${webRTCConfig}" />
@@ -1224,6 +1225,9 @@ class $a31478a830f9f2a1$export$d0a8272d8a203a78 extends (0, $ab210b2da7b39b9d$ex
         };
     }
 }
+(0, $24c52f343453d62d$export$29e00dfd3077644b)([
+    (0, $04c21ea1ce1f6057$export$ca000e230c0caa3e)()
+], $a31478a830f9f2a1$export$d0a8272d8a203a78.prototype, "_config", void 0);
 (0, $24c52f343453d62d$export$29e00dfd3077644b)([
     (0, $04c21ea1ce1f6057$export$ca000e230c0caa3e)()
 ], $a31478a830f9f2a1$export$d0a8272d8a203a78.prototype, "_header", void 0);
